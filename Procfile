@@ -1,1 +1,1 @@
-web: python3 mcu.py
+web: python mcu.py
