@@ -3,9 +3,6 @@ from telegram.ext import Updater,InlineQueryHandler, CommandHandler
 import requests,logging
 from decouple import config
 
-from bs4 import BeautifulSoup
-import time
-
 
 ##starter function
 def starter():
@@ -14,7 +11,7 @@ def starter():
         Get news and movie updates about the MCU by checking the following platforms:\n\
         Official Website: https://www.marvel.com/movies\n\
         Twiiter Handle : http://twitter.com/marvel\n\
-        Facebbok Fan Page:http://facebook.com/marvel\n \
+        Facebbok Fan Page:http://facebook.com/marvel\n\
         Youtube Channel:http://youtube.com/marvel\n\
         Instagram:http://instagram.com/marvel\n\
         Pinterest:https://www.pinterest.com/marvelofficial'
