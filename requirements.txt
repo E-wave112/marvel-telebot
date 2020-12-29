@@ -1,7 +1,7 @@
 APScheduler==3.6.3
 certifi==2019.11.28
 chardet==3.0.4
-python==3.8.5
+python==3.8
 python-telegram-bot==13.1
 pytz==2019.3
 python-decouple==3.3
