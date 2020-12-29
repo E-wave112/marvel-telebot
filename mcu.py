@@ -4,6 +4,9 @@ import requests,logging
 from decouple import config
 
 
+##set up the webhook port
+PORT=config('PORT')
+TOKEN=config("TELEGRAM_API_TOKEN")
 ##starter function
 def starter():
     return 'welcome to the Marvel Cinematic Universe movie downloader bot!\n\
@@ -149,7 +152,7 @@ def spiderman(update,context):
     context.bot.send_message(chat_id=chat_id,text=mcuspider())
 ##driver function
 def main():
-    updater = Updater(config("token2"),use_context=True)
+    updater = Updater(TOKEN,use_context=True)
     dp = updater.dispatcher
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                      level=logging.INFO)
@@ -168,7 +171,10 @@ def main():
     dp.add_handler(CommandHandler('start',start))
 
 
-    updater.start_polling()
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=TOKEN)
+    updater.bot.setWebhook('https://marvel-telebot.herokuapp.com/' + TOKEN)
     updater.idle()
 
 
