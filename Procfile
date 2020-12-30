@@ -1,1 +1,1 @@
-web: python mcu.py
+web: python bot.py
