@@ -1,6 +1,6 @@
 ##using telegram to creat a an mcu video downloader bot
 from telegram.ext import Updater,InlineQueryHandler, CommandHandler
-import requests,logging
+import logging
 from decouple import config
 
 
