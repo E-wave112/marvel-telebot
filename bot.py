@@ -172,11 +172,10 @@ def main():
     dp.add_handler(CommandHandler('start',start))
 
 
-    # updater.start_webhook(listen="0.0.0.0",
-    #                       port=int(PORT),
-    #                       url_path=TOKEN)
-    # updater.bot.setWebhook('https://marvel-telebot.herokuapp.com/' + TOKEN)
-    updater.start_polling()
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=TOKEN)
+    updater.bot.setWebhook('https://mcubot.herokuapp.com/' + TOKEN)
     updater.idle()
                 
 
