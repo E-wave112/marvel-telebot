@@ -2,11 +2,10 @@
 from telegram.ext import Updater,InlineQueryHandler, CommandHandler
 import requests,logging
 from decouple import config
-import os
 
 
 ##set up the webhook port
-PORT=os.environ.get('PORT','5000')
+PORT=config('PORT')
 TOKEN=config("TELEGRAM_API_TOKEN")
 ##starter function
 def starter():
