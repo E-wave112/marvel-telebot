@@ -2,6 +2,36 @@
 from telegram.ext import Updater,InlineQueryHandler, CommandHandler
 import logging
 from decouple import config
+##import the fauna driver
+
+from faunadb import query as q
+from faunadb.objects import Ref
+from faunadb.client import FaunaClient
+##import pytz and datetime to add timestamps to fauna db 
+import pytz
+from datetime import datetime
+
+
+client = FaunaClient(secret=config('FAUNA_SECRET_KEY'))
+
+##create a function to save relevant user data to faunadb
+def faunadata(update,chat_id,first_name,username):
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    ##create a try except block to ensure we are not registering users more than once
+    try:
+        client.query(q.get(q.match(q.index("users"), chat_id)))
+    except:
+        mcuser = client.query(q.create(q.collection("mcusers"), {
+        "data": {
+            "id": chat_id,
+            "first_name": first_name,
+            "username": username,
+            "last_command": "",
+            "date": datetime.now(pytz.UTC)
+        }
+    }))
+    return mcuser
 
 
 ##set up the webhook port
@@ -100,6 +130,7 @@ def mcuantman():
 ##starter for the telegram bot
 def start(update,context):
     chat_id = update.effective_chat.id
+    print(chat_id)
     context.bot.send_message(chat_id=chat_id,text=starter())
 
 ##dispatcher for iron man
