@@ -5,7 +5,6 @@ h2==2.6.2
 hpack==3.0.0
 hyper==0.7.0
 hyperframe==3.2.0
-idna @ file:///tmp/build/80754af9/idna_1593446292537/work
 iso8601==0.1.14
 isort==5.6.3
 lazy-object-proxy==1.4.3
