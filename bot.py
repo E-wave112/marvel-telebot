@@ -20,9 +20,9 @@ def faunadata(update,chat_id,first_name,username):
     username = update["message"]["chat"]["username"]
     ##create a try except block to ensure we are not registering users more than once
     try:
-        client.query(q.get(q.match(q.index("users"), chat_id)))
+        client.query(q.get(q.match(q.index("mcuid"), chat_id)))
     except:
-        mcuser = client.query(q.create(q.collection("mcusers"), {
+        mcuser = client.query(q.create(q.collection("mcuid"), {
         "data": {
             "id": chat_id,
             "first_name": first_name,
