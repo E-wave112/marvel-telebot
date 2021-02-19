@@ -38,8 +38,9 @@ def faunadata(update,chat_id,first_name,username):
 PORT=config('PORT')
 TOKEN=config("TELEGRAM_API_TOKEN")
 ##starter function
+:wave
 def starter():
-    return 'welcome to the Marvel Cinematic Universe movie downloader bot!\n\
+    return 'welcome to the Marvel Cinematic Universe movie downloader bot  !\n\
         To download any movie in the mcu type the command : /moviename (e.g /ironman, /captainamerica e.t.c)\n\
         Get news and movie updates about the MCU by checking the following platforms:\n\
         Official Website: https://www.marvel.com/movies\n\
@@ -130,56 +131,91 @@ def mcuantman():
 ##starter for the telegram bot
 def start(update,context):
     chat_id = update.effective_chat.id
-    print(chat_id)
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id,text=starter())
 
 ##dispatcher for iron man
 def iron(update,context):
     ironman= mcuiron()
     chat_id = update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id, text=ironman)
 
 ##telegram dispatcher for cap america
 def captain(update,context):
     chat_id = update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id, text=mcucap())
 
 ##telegram dispatcher for avengers
 def avengers(update,context):
     chat_id = update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id,text=mcuavengers())
 
 ##telegram dispatcher for the hulk
 def hulk(update,context):
     chat_id = update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id,text=mcuhulk())
 ##telegram dispatcher for thor
 def thor(update,context):
     chat_id = update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id,text=mcuthor())
 ##telegram dispatcher for guardians for the galaxy
 def guardians(update,context):
     chat_id = update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id,text=mcuguardians())
 ##telegram dispatcher for antman
 def antman(update,context):
     chat_id=update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id,text=mcuantman())
 ##telegram dispatcher for doctorstrange
 def drstrange(update,context):
     chat_id = update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id,text=mcudrstrange())
 ##telegram dispatcher for blackpanther
 def blackpanther(update,context):
     chat_id=update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id,text=mcublackpanther())
 ##telegram dispatcher for captainmarvel
 def captainmarvel(update,context):
     chat_id=update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id,text=mcucapmarvel())
 ##telegram dispatcher spiderman
 def spiderman(update,context):
     chat_id = update.effective_chat.id
+    first_name = update["message"]["chat"]["first_name"]
+    username = update["message"]["chat"]["username"]
+    faunadata(update,chat_id,first_name,username)
     context.bot.send_message(chat_id=chat_id,text=mcuspider())
 ##driver function
 def main():
