@@ -38,7 +38,6 @@ def faunadata(update,chat_id,first_name,username):
 PORT=config('PORT')
 TOKEN=config("TELEGRAM_API_TOKEN")
 ##starter function
-:wave
 def starter():
     return 'welcome to the Marvel Cinematic Universe movie downloader bot  !\n\
         To download any movie in the mcu type the command : /moviename (e.g /ironman, /captainamerica e.t.c)\n\
