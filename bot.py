@@ -39,9 +39,9 @@ PORT=config('PORT')
 TOKEN=config("TELEGRAM_API_TOKEN")
 ##starter function
 def starter():
-    return 'welcome to the Marvel Cinematic Universe movie downloader bot  !\n\
+    return 'welcome to the Marvel Cinematic Universe movie downloader bot 🙂  !\n\
         To download any movie in the mcu type the command : /moviename (e.g /ironman, /captainamerica e.t.c)\n\
-        Get news and movie updates about the MCU by checking the following platforms:\n\
+        Get news and movie updates about the MCU by checking the following platforms:  😍 \n\
         Official Website: https://www.marvel.com/movies\n\
         Twiiter Handle : http://twitter.com/marvel\n\
         Facebbok Fan Page:http://facebook.com/marvel\n\
@@ -213,3 +213,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+ 
