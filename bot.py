@@ -19,8 +19,10 @@ def faunadata(update,chat_id,first_name,username):
     first_name = update["message"]["chat"]["first_name"]
     username = update["message"]["chat"]["username"]
     ##create a try except block to ensure we are not registering users more than once
+    x = ''
     try:
         client.query(q.get(q.match(q.index("mcuid"), chat_id)))
+        x = client
     except:
         mcuser = client.query(q.create(q.collection("mcuid"), {
         "data": {
@@ -29,9 +31,9 @@ def faunadata(update,chat_id,first_name,username):
             "username": username,
             "last_command": "",
             "date": datetime.now(pytz.UTC)
-        }
-    }))
-    return mcuser
+        } }))
+        x = mcuser
+    return x
 
 
 ##set up the webhook port
