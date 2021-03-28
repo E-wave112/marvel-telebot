@@ -1,5 +1,5 @@
 ##using telegram to creat a an mcu video downloader bot
-from telegram.ext import Updater,InlineQueryHandler, CommandHandler
+from telegram.ext import Updater,InlineQueryHandler, CommandHandler,MessageHandler,Filters
 import logging
 from decouple import config
 ##import the fauna driver
@@ -183,6 +183,12 @@ def captainmarvel(update,context):
 def spiderman(update,context):
     chat_id = update.effective_chat.id
     context.bot.send_message(chat_id=chat_id,text=mcuspider())
+
+
+##unknown command
+def unknown(update, context): 
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Sorry, I didn't understand that command. 😧")
+    
 ##driver function
 def main():
     updater = Updater(TOKEN,use_context=True)
@@ -202,6 +208,8 @@ def main():
     dp.add_handler(CommandHandler('captainamerica',captain))
     dp.add_handler(CommandHandler('avengers',avengers))
     dp.add_handler(CommandHandler('start',start))
+    unknown_handler = MessageHandler(Filters.command, unknown)
+    dp.add_handler(unknown_handler)
 
 
     updater.start_webhook(listen="0.0.0.0",
